@@ -176,3 +176,48 @@ O resultado é parecido com o da query acima, porém \_id é exibido por padrão
 ```
 db.alunos.findOne({}, { nome: 1, materias: 1 })
 ```
+
+O comando updateOne atualiza um único documento.
+
+```
+db.crud.updateOne({b: 456}, { $set: {d: 555}})
+
+```
+
+updateMany atualizará todos os documentos que derem match na query abaixo.
+
+```
+db.crud.updateMany({a: 123}, { $set: {h: 30}})
+```
+
+Troca completamente o documento encontrado pelo documento no segundo argumento.
+
+```
+db.crud.replaceOne({c: 789}, {outro: "documento"})
+```
+
+Exclui o primeiro que encontra.
+
+```
+db.crud.deleteOne({a: 123})
+```
+
+Exclui todos os que encontrar
+
+```
+db.crud.deleteMany({b: 456})
+```
+
+Exclui todos os documentos onde h existir.
+
+```
+db.crud.deleteMany({h: {$exists: true}})
+```
+
+CUIDADO!!!!!!!!!!!!!!!!!!!!!!!
+
+Exclui todos os documentos da collection
+
+```
+db.crud.deleteMany({})
+```
